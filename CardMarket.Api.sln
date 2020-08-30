@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29920.165
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CardMarket.Api", "src\CardMarket.Api.csproj", "{1B1C0366-8103-412E-B4D4-3F76A722E325}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CardMarket.Api.IntegrationTests", "test\CardMarket.Api.IntegrationTests.csproj", "{CAC07366-222A-457A-9138-0FC9A0953AD2}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1B1C0366-8103-412E-B4D4-3F76A722E325}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1B1C0366-8103-412E-B4D4-3F76A722E325}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1B1C0366-8103-412E-B4D4-3F76A722E325}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1B1C0366-8103-412E-B4D4-3F76A722E325}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CAC07366-222A-457A-9138-0FC9A0953AD2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CAC07366-222A-457A-9138-0FC9A0953AD2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CAC07366-222A-457A-9138-0FC9A0953AD2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CAC07366-222A-457A-9138-0FC9A0953AD2}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {58A9E314-E78C-4C84-9965-68DEB7F4BC0B}
+	EndGlobalSection
+EndGlobal
