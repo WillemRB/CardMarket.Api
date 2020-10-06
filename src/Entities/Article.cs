@@ -1,5 +1,5 @@
-﻿using System.Collections.Generic;
-using System.Reflection.Metadata;
+﻿using System;
+using System.Collections.Generic;
 using Jil;
 
 namespace CardMarket.Api.Entities
@@ -61,11 +61,10 @@ namespace CardMarket.Api.Entities
         public bool IsFirstEdition { get; set; }
 
         [JilDirective(Name = "seller")]
-        public User 
+        public User Seller { get; set; }
 
-        //seller: {}                          // Seller's user entity
-        //        lastEdited:                         // Date, the article was last updated
-
+        [JilDirective(Name = "lastEdited")]
+        public DateTime LastEdited { get; set; }
     }
 
     public class ArticleLanguage
