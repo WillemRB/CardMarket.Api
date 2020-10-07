@@ -84,14 +84,14 @@ namespace CardMarket.Api
 
         public List<Article> GetStock(int start = 1, int maxResults = 100)
         {
-            var result = ExecuteRequest($"{Options.Environment.Uri}/ws/v2.0/output.json/stock/{start}?maxResults={maxResults}", "GET");
+            var result = ExecuteRequest($"{Options.ApiEnvironment.Uri}/ws/v2.0/output.json/stock/{start}?maxResults={maxResults}", "GET");
 
             return JSON.Deserialize<StockResponse>(result).Articles;
         }
 
         public List<Game> GetGames()
         {
-            var result = ExecuteRequest($"{Options.Environment.Uri}/ws/v2.0/output.json/games", "GET");
+            var result = ExecuteRequest($"{Options.ApiEnvironment.Uri}/ws/v2.0/output.json/games", "GET");
 
             return JSON.Deserialize<GameResponse>(result).Games;
         }
