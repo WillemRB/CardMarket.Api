@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Net;
 using CardMarket.Api.Entities;
@@ -41,11 +42,20 @@ namespace CardMarket.Api
         /// <param name="options"></param>
         public CardMarketApiClient(string appToken, string appSecret, string accessToken, string accessSecret, CardMarketApiClientOptions options)
         {
+            if (string.IsNullOrEmpty(appToken))
+                throw new ArgumentException(nameof(appToken));
+            if (string.IsNullOrEmpty(appSecret))
+                throw new ArgumentException(nameof(appSecret));
+            if (string.IsNullOrEmpty(accessToken))
+                throw new ArgumentException(nameof(accessToken));
+            if (string.IsNullOrEmpty(accessSecret))
+                throw new ArgumentException(nameof(accessSecret));
+
             this.AppToken = appToken;
             this.AppSecret = appSecret;
             this.AccessToken = accessToken;
             this.AccessSecret = accessSecret;
-            Options = options;
+            Options = options ?? new CardMarketApiClientOptions();
         }
 
         private string ExecuteRequest(string url, string method, string body = null)

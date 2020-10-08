@@ -4,8 +4,6 @@
     <TargetFramework>netcoreapp3.1</TargetFramework>
 
     <IsPackable>false</IsPackable>
-
-    <PackageLicenseFile>LICENSE.md</PackageLicenseFile>
   </PropertyGroup>
 
   <ItemGroup>
@@ -16,7 +14,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\src\CardMarket.Api.csproj" />
+    <ProjectReference Include="..\..\src\CardMarket.Api.csproj" />
   </ItemGroup>
 
 </Project>
