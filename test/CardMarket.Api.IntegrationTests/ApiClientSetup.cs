@@ -15,7 +15,7 @@ namespace CardMarket.Api.Tests
                 Environment.GetEnvironmentVariable(APP_SECRET),
                 Environment.GetEnvironmentVariable(ACCESS_TOKEN),
                 Environment.GetEnvironmentVariable(ACCESS_TOKEN_SECRET),
-                new CardMarketApiClientOptions
+                options: new CardMarketApiClientOptions
                 {
                     ApiEnvironment = ApiEnvironment.Sandbox,
                 }
