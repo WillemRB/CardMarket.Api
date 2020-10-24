@@ -4,6 +4,12 @@ using Jil;
 
 namespace CardMarket.Api.Entities
 {
+    public class OrderResponse
+    {
+        [JilDirective("order")]
+        public IList<Order> Orders { get; set; }
+    }
+
     public class Order
     {
         [JilDirective(Name = "idOrder")]
@@ -43,7 +49,7 @@ namespace CardMarket.Api.Entities
         public string Note { get; set; }
 
         [JilDirective(Name = "article")]
-        public List<Article> Articles { get; set; }
+        public IList<Article> Articles { get; set; }
 
         [JilDirective(Name = "articleValue")]
         public decimal ArticleValue { get; set; }

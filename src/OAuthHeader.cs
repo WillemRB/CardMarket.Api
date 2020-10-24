@@ -99,7 +99,11 @@ namespace CardMarket.Api
 
             // Create the OAuth signature
             var signatureKey = $"{Uri.EscapeDataString(AppSecret)}&{Uri.EscapeDataString(AccessSecret)}";
-            var hasher = HMAC.Create();
+
+            // Using HMACSHA1.Create() throws a PlatformNotSupportedException
+            // Calling CryptoConfig is a workaround
+            var hasher = (HMACSHA1)CryptoConfig.CreateFromName("HMACSHA1");
+
             hasher.Key = Encoding.UTF8.GetBytes(signatureKey);
             var rawSignature = hasher.ComputeHash(Encoding.UTF8.GetBytes(baseString));
             var oAuthSignature = Convert.ToBase64String(rawSignature);
