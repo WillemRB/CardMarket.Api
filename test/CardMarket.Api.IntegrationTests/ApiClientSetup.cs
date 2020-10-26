@@ -10,20 +10,35 @@ namespace CardMarket.Api.Tests
         private const string ACCESS_TOKEN = "MKM_SANDBOX_ACCESS_TOKEN";
         private const string ACCESS_TOKEN_SECRET = "MKM_SANDBOX_ACCESS_TOKEN_SECRET";
 
+        private static IConfigurationRoot config;
+
         public static CardMarketApiClient CreateApiClient()
         {
-            var config = new ConfigurationBuilder().AddJsonFile("appSettings.json").Build();
+            config = new ConfigurationBuilder().AddJsonFile("appSettings.json").Build();
 
             return new CardMarketApiClient(
-                config[APP_TOKEN],
-                config[APP_SECRET],
-                config[ACCESS_TOKEN],
-                config[ACCESS_TOKEN_SECRET],
+                GetConfigValue(APP_TOKEN),
+                GetConfigValue(APP_SECRET),
+                GetConfigValue(ACCESS_TOKEN),
+                GetConfigValue(ACCESS_TOKEN_SECRET),
                 options: new CardMarketApiClientOptions
                 {
                     ApiEnvironment = ApiEnvironment.Sandbox,
                 }
             );
+        }
+
+        /// <summary>
+        /// Helper function that is used to support both appSettings.json (for local debugging)
+        /// and environment variables to work with the Travis CI build.
+        /// </summary>
+        /// <param name="key"></param>
+        /// <returns></returns>
+        private static string GetConfigValue(string key)
+        {
+            if (string.IsNullOrEmpty(config[key]))
+                return Environment.GetEnvironmentVariable(key);
+            return config[key];
         }
     }
 }
