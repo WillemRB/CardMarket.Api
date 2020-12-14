@@ -3,4 +3,4 @@ mono: none
 dotnet: 3.1.402
 script:
   - dotnet build
-  - dotnet test TestCategory!=Integration
+  - dotnet test --filter TestCategory!=Integration
