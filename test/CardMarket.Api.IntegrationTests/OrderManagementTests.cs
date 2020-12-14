@@ -4,7 +4,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace CardMarket.Api.IntegrationTests
 {
-    [TestClass]
+    [TestClass, TestCategory("Integration")]
     public class OrderManagementTests
     {
         private CardMarketApiClient _client;
