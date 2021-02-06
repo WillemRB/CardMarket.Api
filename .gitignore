@@ -5,3 +5,6 @@ packages/
 
 .vs/
 .vscode/
+
+# Prevent accidentally committing API keys.
+test/CardMarket.Api.IntegrationTests/appSettings.json
