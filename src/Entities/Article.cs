@@ -1,102 +1,102 @@
 ﻿using System;
 using System.Collections.Generic;
-using Jil;
+using System.Text.Json.Serialization;
 
 namespace CardMarket.Api.Entities
 {
     public class StockResponse
     {
-        [JilDirective(Name = "article")]
+        [JsonPropertyName("article")]
         public List<Article> Articles { get; set; }
     }
 
     public class Article
     {
-        [JilDirective(Name = "idArticle")]
+        [JsonPropertyName("idArticle")]
         public int Id { get; set; }
 
-        [JilDirective(Name = "idProduct")]
+        [JsonPropertyName("idProduct")]
         public int ProductId { get; set; }
 
-        [JilDirective(Name = "language")]
+        [JsonPropertyName("language")]
         public ArticleLanguage Language { get; set; }
 
-        [JilDirective(Name = "comments")]
+        [JsonPropertyName("comments")]
         public string Comment { get; set; }
 
-        [JilDirective(Name = "price")]
+        [JsonPropertyName("price")]
         public decimal Price { get; set; }
 
-        [JilDirective(Name = "priceEUR")]
+        [JsonPropertyName("priceEUR")]
         public decimal PriceEuro { get; set; }
 
-        [JilDirective(Name = "priceGBP")]
+        [JsonPropertyName("priceGBP")]
         public decimal PriceGBP { get; set; }
 
-        [JilDirective(Name = "count")]
+        [JsonPropertyName("count")]
         public int Count { get; set; }
 
-        [JilDirective(Name = "inShoppingCart")]
+        [JsonPropertyName("inShoppingCart")]
         public bool InShoppingCart { get; set; }
 
-        [JilDirective(Name = "product")]
+        [JsonPropertyName("product")]
         public ArticleProduct Product { get; set; }
 
-        [JilDirective(Name = "condition")]
+        [JsonPropertyName("condition")]
         public string Condition { get; set; }
 
-        [JilDirective(Name = "isFoil")]
+        [JsonPropertyName("isFoil")]
         public bool IsFoil { get; set; }
 
-        [JilDirective(Name = "isSigned")]
+        [JsonPropertyName("isSigned")]
         public bool IsSigned { get; set; }
 
-        [JilDirective(Name = "isAltered")]
+        [JsonPropertyName("isAltered")]
         public bool IsAltered { get; set; }
 
-        [JilDirective(Name = "isPlayset")]
+        [JsonPropertyName("isPlayset")]
         public bool IsPlayset { get; set; }
 
-        [JilDirective(Name = "isFirstEd")]
+        [JsonPropertyName("isFirstEd")]
         public bool IsFirstEdition { get; set; }
 
-        [JilDirective(Name = "seller")]
+        [JsonPropertyName("seller")]
         public User Seller { get; set; }
 
-        [JilDirective(Name = "lastEdited")]
+        [JsonPropertyName("lastEdited")]
         public DateTime LastEdited { get; set; }
     }
 
     public class ArticleLanguage
     {
-        [JilDirective(Name = "idLanguage")]
+        [JsonPropertyName("idLanguage")]
         public int Id { get; set; }
 
-        [JilDirective(Name = "languageName")]
+        [JsonPropertyName("languageName")]
         public string Name { get; set; }
     }
 
     public class ArticleProduct
     {
-        [JilDirective(Name = "enName")]
+        [JsonPropertyName("enName")]
         public string Name { get; set; }
 
-        [JilDirective(Name = "locName")]
+        [JsonPropertyName("locName")]
         public string LocalizedName { get; set; }
 
-        [JilDirective(Name = "image")]
+        [JsonPropertyName("image")]
         public string Image { get; set; }
 
-        [JilDirective(Name = "expansion")]
+        [JsonPropertyName("expansion")]
         public string Expansion { get; set; }
 
-        [JilDirective(Name = "nr")]
+        [JsonPropertyName("nr")]
         public string Number { get; set; }
 
-        [JilDirective(Name = "expIcon")]
+        [JsonPropertyName("expIcon")]
         public int ExpansionIcon { get; set; }
 
-        [JilDirective(Name = "rarity")]
+        [JsonPropertyName("rarity")]
         public string Rarity { get; set; }
     }
 }

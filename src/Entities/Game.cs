@@ -1,23 +1,23 @@
 ﻿using System.Collections.Generic;
-using Jil;
+using System.Text.Json.Serialization;
 
 namespace CardMarket.Api.Entities
 {
     public class GameResponse
     {
-        [JilDirective(Name = "game")]
+        [JsonPropertyName("game")]
         public IList<Game> Games { get; set; }
     }
 
     public class Game
     {
-        [JilDirective(Name = "idGame")]
+        [JsonPropertyName("idGame")]
         public int GameId { get; set; }
 
-        [JilDirective(Name = "name")]
+        [JsonPropertyName("name")]
         public string Name { get; set; }
 
-        [JilDirective(Name = "abbreviation")]
+        [JsonPropertyName("abbreviation")]
         public string ShortName { get; set; }
     }
 }

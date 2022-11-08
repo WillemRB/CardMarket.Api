@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Net;
 using CardMarket.Api.Entities;
-using Jil;
+using System.Text.Json;
 
 namespace CardMarket.Api
 {
@@ -96,14 +96,14 @@ namespace CardMarket.Api
         {
             var result = ExecuteRequest($"{Options.ApiEnvironment.Uri}/ws/v2.0/output.json/stock/{start}?maxResults={maxResults}", "GET");
 
-            return JSON.Deserialize<StockResponse>(result).Articles;
+            return JsonSerializer.Deserialize<StockResponse>(result).Articles;
         }
 
         public IList<Game> GetGames()
         {
             var result = ExecuteRequest($"{Options.ApiEnvironment.Uri}/ws/v2.0/output.json/games", "GET");
 
-            return JSON.Deserialize<GameResponse>(result).Games;
+            return JsonSerializer.Deserialize<GameResponse>(result).Games;
         }
     }
 }

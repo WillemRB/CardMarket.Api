@@ -1,25 +1,26 @@
-﻿using Jil;
+﻿
+using System.Text.Json.Serialization;
 
 namespace CardMarket.Api.Entities
 {
     public class Address
     {
-        [JilDirective(Name = "name")]
+        [JsonPropertyName("name")]
         public string Name { get; set; }
 
-        [JilDirective(Name = "extra")]
+        [JsonPropertyName("extra")]
         public string Extra { get; set; }
 
-        [JilDirective(Name = "street")]
+        [JsonPropertyName("street")]
         public string Street { get; set; }
 
-        [JilDirective(Name = "zip")]
+        [JsonPropertyName("zip")]
         public string ZipCode { get; set; }
 
-        [JilDirective(Name = "city")]
+        [JsonPropertyName("city")]
         public string City { get; set; }
 
-        [JilDirective(Name = "country")]
+        [JsonPropertyName("country")]
         public string Country { get; set; }
     }
 }

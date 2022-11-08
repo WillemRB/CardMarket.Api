@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
+using System.Text.Json;
 using CardMarket.Api.Entities;
 using CardMarket.Api.Structs;
-using Jil;
 
 namespace CardMarket.Api
 {
@@ -11,7 +11,9 @@ namespace CardMarket.Api
         {
             var response = ExecuteRequest($"{Options.ApiEnvironment.Uri}/ws/v2.0/output.json/orders/{actor}/{status}/{start}", "GET");
 
-            return JSON.Deserialize<OrderResponse>(response, Jil.Options.ISO8601PrettyPrint).Orders;
+            var options = new JsonSerializerOptions { WriteIndented = true };
+
+            return JsonSerializer.Deserialize<OrderResponse>(response, options).Orders;
         }
     }
 }

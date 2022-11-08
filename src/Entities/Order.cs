@@ -1,108 +1,108 @@
 ﻿using System;
 using System.Collections.Generic;
-using Jil;
+using System.Text.Json.Serialization;
 
 namespace CardMarket.Api.Entities
 {
     public class OrderResponse
     {
-        [JilDirective("order")]
+        [JsonPropertyName("order")]
         public IList<Order> Orders { get; set; }
     }
 
     public class Order
     {
-        [JilDirective(Name = "idOrder")]
+        [JsonPropertyName("idOrder")]
         public int Id { get; set; }
 
-        [JilDirective(Name = "isBuyer")]
+        [JsonPropertyName("isBuyer")]
         public bool IsBuyer { get; set; }
 
-        [JilDirective(Name = "seller")]
+        [JsonPropertyName("seller")]
         public User Seller { get; set; }
 
-        [JilDirective(Name = "buyer")]
+        [JsonPropertyName("buyer")]
         public User Buyer { get; set; }
 
-        [JilDirective(Name = "state")]
+        [JsonPropertyName("state")]
         public OrderState State { get; set; }
 
-        [JilDirective(Name = "shippingMethod")]
+        [JsonPropertyName("shippingMethod")]
         public ShippingMethod ShippingMethod { get; set; }
 
-        [JilDirective(Name = "trackingNumber")]
+        [JsonPropertyName("trackingNumber")]
         public string TrackingNumber { get; set; }
 
-        [JilDirective(Name = "temporaryEmail")]
+        [JsonPropertyName("temporaryEmail")]
         public string TemporaryEmail { get; set; }
 
-        [JilDirective(Name = "isPresale")]
+        [JsonPropertyName("isPresale")]
         public bool IsPresale { get; set; }
 
-        [JilDirective(Name = "shippingAddress")]
+        [JsonPropertyName("shippingAddress")]
         public Address ShippingAddress { get; set; }
 
-        [JilDirective(Name = "articleCount")]
+        [JsonPropertyName("articleCount")]
         public int ArticleCount { get; set; }
 
-        [JilDirective(Name = "note")]
+        [JsonPropertyName("note")]
         public string Note { get; set; }
 
-        [JilDirective(Name = "article")]
+        [JsonPropertyName("article")]
         public IList<Article> Articles { get; set; }
 
-        [JilDirective(Name = "articleValue")]
+        [JsonPropertyName("articleValue")]
         public decimal ArticleValue { get; set; }
 
-        [JilDirective(Name = "serviceFeeValue")]
+        [JsonPropertyName("serviceFeeValue")]
         public decimal ServiceFee { get; set; }
 
-        [JilDirective(Name = "totalValue")]
+        [JsonPropertyName("totalValue")]
         public decimal TotalValue { get; set; }
     }
 
     public class OrderState
     {
-        [JilDirective(Name = "state")]
+        [JsonPropertyName("state")]
         public string State { get; set; }
 
-        [JilDirective(Name = "dateBought")]
+        [JsonPropertyName("dateBought")]
         public DateTime DateBought { get; set; }
 
-        [JilDirective(Name = "datePaid")]
+        [JsonPropertyName("datePaid")]
         public DateTime DatePaid { get; set; }
 
-        [JilDirective(Name = "dateSent")]
+        [JsonPropertyName("dateSent")]
         public DateTime DateSent { get; set; }
 
-        [JilDirective(Name = "dateReceived")]
+        [JsonPropertyName("dateReceived")]
         public DateTime DateReceived { get; set; }
 
-        [JilDirective(Name = "dateCanceled")]
+        [JsonPropertyName("dateCanceled")]
         public DateTime DateCanceled { get; set; }
 
-        [JilDirective(Name = "reason")]
+        [JsonPropertyName("reason")]
         public string Reason { get; set; }
 
-        [JilDirective(Name = "wasMergedInto")]
+        [JsonPropertyName("wasMergedInto")]
         public int WasMergedInto { get; set; }
     }
 
     public class ShippingMethod
     {
-        [JilDirective(Name = "isShippingMethod")]
+        [JsonPropertyName("isShippingMethod")]
         public int Id { get; set; }
 
-        [JilDirective(Name = "name")]
+        [JsonPropertyName("name")]
         public string Name { get; set; }
 
-        [JilDirective(Name = "price")]
+        [JsonPropertyName("price")]
         public decimal Price { get; set; }
 
-        [JilDirective(Name = "isLetter")]
+        [JsonPropertyName("isLetter")]
         public bool IsLetter { get; set; }
 
-        [JilDirective(Name = "isInsured")]
+        [JsonPropertyName("isInsured")]
         public bool IsInsured { get; set; }
     }
 }
